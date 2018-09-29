@@ -34,7 +34,7 @@
         if @"email" == "test@test.com":
           resp genUsersRegister(db, "Error: test@test.com is taken by the system")
         
-        let (regiB, regiS) = openregistrationRegister(db, @"name", @"email")
+        let (regiB, regiS) = openregistrationRegister(db, @"name", toLowerAscii(@"email"))
 
         if regiB:
           resp genFormLogin(c, "Please click on the confirmation link in your email")
