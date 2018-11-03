@@ -9,20 +9,21 @@
 #proc genUsersRegisterSettings*(c: var TData): string =
 # result = ""
 
+<link rel="stylesheet" href="/css/style_admin.css">
 <link rel="stylesheet" href="/css/openregistration_private.css">
 
-<div style="text-align: center;">
+<div id="register" class="about">
   <h1>Open registration settings</h1>
-</div>
 
-<div id="allMailevents" style="width: 300px; margin-left: auto; margin-right: auto;">
-
-  <div>----------------------------------------------------------------</div>
-  <div> Package:      $pluginTitle plugin</div>
-  <div> Author:       $pluginAuthor</div>
-  <div> Version:      $pluginVersion</div>
-  <div> Version date: $pluginVersionDate</div>
-  <div>----------------------------------------------------------------</div>
+  # let (n, v, d, u) = pluginExtractDetails("openregistration")
+  <div id="pluginDetails">
+    <hr>
+    <div> <b>Package:</b> ${n}</div>
+    <div> <b>Version:</b> ${v}</div>
+    <div> <b>Description:</b><br>${d}</div>
+    <div> <b>URL:</b> <a href="${u}">${u}</a></div>
+    <hr>
+  </div>
 
   <br>
 
@@ -44,19 +45,19 @@
 
 <head>
   ${standardElements[0]}
-  
+
   <link rel="stylesheet" href="/css/openregistration_private.css">
 </head>
 
-<div style="text-align: center;">
-  <h1>Register an account</h1>
-</div>
-
 <div id="register">
+  <div style="text-align: center;">
+    <h1>Register an account</h1>
+  </div>
+
   <div id="registerAddContainer">
     <form id="registerAdd" method="post" action="/register">
-      
-      # if errorMsg != "": 
+
+      # if errorMsg != "":
       <div style="color:#fc6969;text-align: center;font-size: 1.2rem; line-height: 1.8rem;"><b>$errorMsg</b></div>
       # end if
 
@@ -75,7 +76,7 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </div>
       #end if
-      <button type="submit" class="btn btn-secondary registerDoAdd">Register</button>
+      <button type="submit" class="btn btn-primary registerDoAdd">Register</button>
     </form>
   </div>
 </div>
@@ -83,5 +84,5 @@
 <footer>
   ${standardElements[2]}
 </footer>
-  
+
 #end proc

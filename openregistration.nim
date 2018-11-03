@@ -13,22 +13,17 @@ import ../../nimwcpkg/resources/password/password_generate
 import ../../nimwcpkg/resources/password/salt_generate
 import ../../nimwcpkg/resources/session/user_data
 import ../../nimwcpkg/resources/utils/random_generator
+import ../../nimwcpkg/resources/utils/plugins
 import ../../nimwcpkg/resources/web/google_recaptcha
 
-
-const pluginTitle       = "Open registration"
-const pluginAuthor      = "Thomas T. Jarløv"
-const pluginVersion     = "0.1"
-const pluginVersionDate = "2018-05-14"
-
-
 proc pluginInfo() =
+  let (n, v, d, u) = pluginExtractDetails("openregistration")
   echo " "
   echo "--------------------------------------------"
-  echo "  Package:      " & pluginTitle & " plugin"
-  echo "  Author:       " & pluginAuthor
-  echo "  Version:      " & pluginVersion
-  echo "  Version date: " & pluginVersionDate
+  echo "  Package:      " & n
+  echo "  Version:      " & v
+  echo "  Description:  " & d
+  echo "  URL:          " & u
   echo "--------------------------------------------"
   echo " "
 pluginInfo()
