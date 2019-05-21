@@ -5,14 +5,14 @@ import
   asyncnet,
   db_sqlite,
   parseCfg,
-  strutils
+  strutils,
+  random
 
 
 import ../../nimwcpkg/resources/email/email_registration
 import ../../nimwcpkg/resources/password/password_generate
 import ../../nimwcpkg/resources/password/salt_generate
 import ../../nimwcpkg/resources/session/user_data
-import ../../nimwcpkg/resources/utils/random_generator
 import ../../nimwcpkg/resources/utils/plugins
 import ../../nimwcpkg/resources/web/google_recaptcha
 
@@ -56,9 +56,9 @@ proc openregistrationRegister*(db: DbConn, name, email: string): tuple[b: bool, 
 
   # Generate password
   let salt = makeSalt()
-  let passwordOriginal = randomString(12)
+  let passwordOriginal = $rand(10_00_00_00_00_01.int..89_99_99_99_99_98.int)
   let password = makePassword(passwordOriginal, salt)
-  let secretUrl = randomStringDigitAlpha(99)
+  let secretUrl = repeat($rand(10_00_00_00_00_00_00_00_00.int..int.high), 5)
 
   # Add user
   let userID = insertID(db, sql"INSERT INTO person (name, email, status, password, salt, secretUrl) VALUES (?, ?, ?, ?, ?, ?)", name, email, "User", password, salt, secretUrl)
