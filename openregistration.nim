@@ -14,7 +14,7 @@ import ../../nimwcpkg/resources/password/password_generate
 import ../../nimwcpkg/resources/password/salt_generate
 import ../../nimwcpkg/resources/session/user_data
 import ../../nimwcpkg/resources/utils/plugins
-import ../../nimwcpkg/resources/web/google_recaptcha
+import ../../nimwcpkg/resources/web/html_utils
 
 proc pluginInfo() =
   let (n, v, d, u) = pluginExtractDetails("openregistration")

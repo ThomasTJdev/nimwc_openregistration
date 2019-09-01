@@ -2,7 +2,8 @@
   {
     "name": "Open registration",
     "foldername": "openregistration",
-    "version": "0.3",
+    "version": "0.4",
+    "requires": "5.5.0",
     "url": "https://github.com/ThomasTJdev/nimwc_openregistration.git",
     "method": "git",
     "tags": [
