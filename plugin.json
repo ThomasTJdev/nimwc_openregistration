@@ -2,8 +2,8 @@
   {
     "name": "Open registration",
     "foldername": "openregistration",
-    "version": "0.4",
-    "requires": "5.5.0",
+    "version": "0.5",
+    "requires": "6.0",
     "url": "https://github.com/ThomasTJdev/nimwc_openregistration.git",
     "method": "git",
     "tags": [
@@ -12,6 +12,8 @@
     ],
     "description": "Enables public users to register an account with the status 'user'.",
     "license": "MIT",
-    "web": "https://github.com/ThomasTJdev/nimwc_openregistration"
+    "web": "https://github.com/ThomasTJdev/nimwc_openregistration",
+    "sustainability": "",
+    "email": "codefactory@ttj.dk"
   }
 ]

@@ -9,15 +9,14 @@ import
   random
 
 
-import ../../nimwcpkg/resources/email/email_registration
-import ../../nimwcpkg/resources/password/password_generate
-import ../../nimwcpkg/resources/password/salt_generate
-import ../../nimwcpkg/resources/session/user_data
-import ../../nimwcpkg/resources/utils/plugins
-import ../../nimwcpkg/resources/web/html_utils
+import ../../nimwcpkg/emails/emails
+import ../../nimwcpkg/plugins/plugins
+import ../../nimwcpkg/passwords/passwords
+import ../../nimwcpkg/sessions/sessions
+import ../../nimwcpkg/webs/html_utils
 
 proc pluginInfo() =
-  let (n, v, d, u) = pluginExtractDetails("openregistration")
+  let (n, v, d, u) = pluginGetDetails("openregistration")
   echo " "
   echo "--------------------------------------------"
   echo "  Package:      " & n
